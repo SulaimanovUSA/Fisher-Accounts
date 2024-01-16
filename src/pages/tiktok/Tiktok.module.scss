@@ -1,0 +1,243 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        width: 100%;
+        height: 60px;
+        padding: 15px 15px 15px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            width: 118px;
+            height: 35px;
+            background-image: url(../../../public/image/tiktok.png);
+            background-size: 100% 100%;
+
+            @media (max-width: 362px) {
+                width: 100px;
+                height: 30px;
+            }
+            @media (max-width: 322px) {
+                transform: scale(0.9);
+            }
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+
+            @media (max-width: 362px) {
+                font-size: 13px;
+            }
+            @media (max-width: 322px) {
+                font-size: 12px;
+            }
+
+            .icon {
+                font-size: 20px;
+                margin: 0 7px 0 0;
+                color: rgba(0, 0, 0, 0.5);
+
+                @media (max-width: 362px) {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .form {
+        width: 363px;
+        margin: 90px 0 0 0;
+
+        @media (max-height: 490px) {
+            width: 100%;
+            padding: 0 44px 50px 44px;
+        }
+        @media (max-height: 490px) and (max-width: 362px) {
+            width: 100%;
+            padding: 0 0 0px 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        @media (max-width: 450px) {
+            z-index: 2;
+            background: white;
+        }
+        @media (max-width: 362px) {
+            width: 320px;
+        }
+        @media (max-width: 322px) {
+            width: 270px;
+        }
+
+        .error {
+            color: red;
+            font-family: sans-serif;
+            font-size: 13px;
+            height: 5px;
+        }
+
+        .head_title {
+            width: 100%;
+            text-align: center;
+        }
+
+        .title {
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 15px;
+            margin: 20px 0 0 0;
+        }
+
+        .input {
+            width: 100%; 
+            height: 44px;
+            padding: 1px 0px 1px 12px;
+            font-size: 16px;
+            background: rgba(241, 240, 240, 0.753);
+            margin: 10px 0 0 0;
+            border: solid 1px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            outline: none;
+
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .input_box {
+            position: relative;
+
+            .eye_icon {
+                position: absolute;
+                right: 15px;
+                top: 23px;
+                cursor: pointer;
+                font-size: 20px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .under_title {
+            margin: 10px 0 0 0;
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+
+        .button {
+            width: 100%;
+            height: 44px;
+            margin: 20px 0 0 0;
+            border: none;
+            background: rgba(241, 240, 240, 0.753);
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .button_active {
+            position: relative;
+            &::before {
+                position: absolute;
+                content: 'Загрузка';
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                color: white;
+                background: rgb(194, 192, 192);
+                text-align: center;
+                line-height: 2.8;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 255, 0.2);
+                line-height: 2.8;
+                animation: loader 0s linear;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: 148px;
+        position: fixed;
+        bottom: 0;
+
+        @media (max-width: 450px) {
+            z-index: 0;
+        }
+
+        .section {
+            width: 100%;
+            height: 64px;
+            border-top: solid 1px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .title {
+                color: black;
+                font-family: sans-serif;
+                font-size: 15px;
+
+                .title_link {
+                    color: red;
+                    font-weight: 600;
+                }
+            }
+
+            &:nth-child(2) {
+                height: 84px;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 0 130px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                @media (max-width: 450px) {
+                    padding: 0 0 0 10px;
+                }
+                
+                .title_2 {
+                    width: 174px;
+                    height: 34px;
+                    border: solid 1px rgba(255, 255, 255, 0.3);
+                    color: white;
+                    font-family: sans-serif;
+                    font-size: 15px;
+                    border-radius: 2px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:nth-child(2) {
+                        border: none;
+                        font-weight: 600;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+            }
+        }
+    }
+}
